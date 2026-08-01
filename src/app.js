@@ -5,6 +5,7 @@ import morgan from "morgan";
 import dotenv from "dotenv";
 
 // Routes
+import aiRoutes from "./routes/ai.routes.js";
 import authRoutes from "./routes/auth.routes.js";
 import userRoutes from "./routes/user.routes.js";
 import taskRoutes from "./routes/task.routes.js";
@@ -54,6 +55,7 @@ app.get("/", (req, res) => {
 });
 
 // API Routes
+app.use("/api/ai", aiRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/tasks", taskRoutes);
